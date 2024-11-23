@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/movies.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <form action="/addMovie" method="post" class="movieFormContainer">
+        <div class="inputContainer">
+            <label for="moviename">Movie Name:</label>
+            <input type="text" name="moviename" id="moviename" required>
+        </div>
+        <div class="inputContainer">
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" required>
+        </div>
+        <div class="inputContainer">
+            <label for="rating">Rating:</label>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" required />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" required/>
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" required/>
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" required/>
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" required/>
+                <label for="star1" title="text">1 star</label>
+            </div>
+        </div>
+        <div class="inputContainer">
+            <label for="desc">Description:</label>
+            <textarea type="text" name="desc" id="desc" class="textAreaDesc" required></textarea>
+        </div>
+        <div class="inputContainer">
+            <label for="genreid">Select Genre:</label>
+            <select name="genre" id="genreSelect" required>
+                    <% genres.map(genre => { %>
+                        <option value=<%= genre.id %> ><%= genre.genrename %></option>
+                    <% }) %>
+            </select>
+        </div>
+        <div class="inputContainer">
+            <label for="secretKey">Secret Code: (this is used so only you can delete the movie)</label>
+            <input type="text" name="secretKey" id="secretKey" required>
+        </div>
+        <button type="submit" class="addBtn">Add</button>
+    </form>
+</body>
+</html>

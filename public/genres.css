@@ -1,0 +1,82 @@
+form{
+    margin-top: 50px;
+    align-self: center;
+    width: 600px;
+    max-height: 650px;
+    /* From https://css.glass */
+    background: rgba(50, 48, 50, 0.59);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(50, 48, 50, 0.27);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.textAreaDesc, .inputGenreName{
+    box-sizing: border-box;
+    min-width: 600px;
+    max-width: 600px;
+    height: 45px;
+    border-radius: 15px;
+    outline: none;
+    color: white;
+    border: 1px solid rgba(50, 48, 50, 1);
+    background-color: #0f0e0f;
+    padding: 20px;
+}
+
+.textAreaDesc{
+    min-height: 60px;
+}
+
+.addBtn{
+    margin-top: auto;
+    height: 45px;
+    color: white;
+    border: 1px solid rgba(50, 48, 50, 1);
+    background-color: #1f1e1f;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    transition: .2s;
+}
+
+.addBtn:hover{
+    background-color: #111111;
+}
+
+label{
+    color: white;
+    font-weight: 500;
+}
+
+.genreCard{
+    width: 320px;
+    height: 430px;
+    border-radius: 10px;
+    background-color: #151415;
+    border: 1px solid #4d4d4d;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.genreImage{
+    width: 100%;
+    height: 65%;
+    background-image: url("/Scifi-2.png");
+    background-size: cover;
+    background-position: top;
+    border-radius: 10px 10px 0 0;
+}
+
+.genreName{
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: center;
+    color: white;
+}

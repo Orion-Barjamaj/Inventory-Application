@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/movies.css">
+</head>
+<body>
+    <%- include("navbar") %>
+        <% if(locals.movies) { %>
+            <% if(movies.length != 0) { %>
+                <div class="movieContainer">
+                    <% movies.map(movie => { %>
+                        <div class="movieCard">
+                            <div class="movieImage"></div>
+                            <div class="info">
+                                <div class="movieName"><%= movie.name %></div>
+                                <div class="movieInfoCard">
+                                    <div class="movieRating"><%= movie.rating %>/5 </div> |
+                                    <div class="movieAuthor"><%= movie.author %> </div>
+                                </div>
+                                <a class="btnLink" href="/movies/<%= movie.id %>"><button class="viewMore">View More</button></a>
+                            </div>
+                        </div>    
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <div class="noMovies">There are no movies in here!</div>
+                <div class="notFoundImg"></div>
+            <% } %>
+        <% } %>
+</body>
+</html>

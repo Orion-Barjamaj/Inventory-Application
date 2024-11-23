@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Genre</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/genres.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <form action="/createGenre" method="post">
+        <label for="genreName">Genre Name:</label>
+        <input type="text" name="genreName" id="genreName" class="inputGenreName">
+        <label for="desc">Description:</label>
+        <textarea type="text" name="description" id="desc" class="textAreaDesc"></textarea>
+        <button type="submit" class="addBtn">Add</button>
+    </form>
+</body>
+</html>

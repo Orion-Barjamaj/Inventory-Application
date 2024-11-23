@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <a href="/"><h1 class="appName">Movie.<span>VAULT</span></h1></a>
+    <a href="/addMovie"><button class="addMovieBtn">ADD MOVIE</button></a>
+    <a href="/createGenre"><button class="addMovieBtn">ADD GENRE</button></a>
+    <a href="/movies"><button class="addMovieBtn">MOVIES</button></a>
+    <a href="/genres"><button class="addMovieBtn">GENRES</button></a>
+    <div class="redline 
+        <% if (url === '/') { %> redline-home 
+        <% } else if (url === '/addMovie') { %> redline-addMovie 
+        <% } else if (url === '/createGenre') { %> redline-createGenre 
+        <% } else if (url.startsWith('/movies')) { %> redline-movies 
+        <% } else if (url === '/genres') { %> redline-genres 
+        <% } %>">
+    </div>
+</div>
+
+</nav>

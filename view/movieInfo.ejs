@@ -1,0 +1,37 @@
+<% let stars = 5; %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movies.name %></title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/movies.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <div class="container">
+        <div class="movieInfoContainer">
+            <h1><%= movies.name %></h1>
+            <div class="line"></div>
+            <p><%= movies.description %></p>
+            <div class="ratingContainer">
+                <% for(let i = 0; i < movies.rating; i++) { %>
+                    <div class="star">★</div>
+                    <% stars-- %>
+                <% } if(stars > 0) { %>
+                    <% for(let i = 0; i < stars; i++) { %>
+                        <div class="greystar">★</div> 
+                    <% } %>
+                <% } %>
+            </div>
+            <h2>Directed by: <%= movies.author %> </h2>
+        </div>
+        <div class="imageContainer">
+            <img>
+        </div>
+    </div>
+</body>
+</html>

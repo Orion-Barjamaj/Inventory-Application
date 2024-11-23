@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/genres.css">
+    <link rel="stylesheet" href="/navbar.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <ul>
+        <% if(locals.genres) { %>
+            <% genres.map(genre => { %>
+                <div class="genreCard">
+                    <div class="genreImage"></div>
+                    <div class="genreName"><%= genre.genrename %></div>
+                </div>
+            <% }); %>
+        <% } %>
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
