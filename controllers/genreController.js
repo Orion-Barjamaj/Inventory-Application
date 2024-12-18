@@ -12,4 +12,10 @@ module.exports = {
         const genres = await query.getGenres();
         res.render("../view/genres", { genres: genres, url: req.originalUrl });
     },
+    getGenre: async (req,res) => {
+        const getGenre = await query.selectGenre(req.params.id);
+        const getMovies = await query.selectMoviesWithGenre(req.params.id);
+        const selectedGenre = getGenre[0];
+        res.render("../view/genreInfo",  {genre: selectedGenre, url: req.originalUrl, movies: getMovies});
+    }
 }

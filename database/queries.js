@@ -23,10 +23,28 @@ async function selectMovie(id) {
   return rows;
 }  
 
+async function selectGenre(id) {
+  const {rows} = await pool.query("SELECT * FROM genres WHERE id = $1;", [id]);
+  return rows;
+}  
+
+async function selectMoviesWithGenre(id){
+  const {rows} = await pool.query("SELECT movies.name, movies.id, genres.genrename AS genre FROM movies JOIN genres ON movies.genreid = genres.genrename WHERE genres.id = $1;", [id]);
+  return rows;
+}
+
+async function deleteMovie(secretKey) {
+  const {results} = await pool.query("DELETE FROM movies WHERE code = $1;", [secretKey]);
+  return results;
+}
+
 module.exports = {
   insertGenre,
   insertMovie,
   getMovies,
   getGenres,
   selectMovie,
+  selectGenre,
+  selectMoviesWithGenre,
+  deleteMovie
 };

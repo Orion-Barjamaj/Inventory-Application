@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/movies.css">
+</head>
+<body>
+    <div class="areYouSure">
+        <h1>Are you sure you want to delete </h1>
+        <div>If you choose yes it cant be brought back</div>
+        <form action="/movies/<%= id %>/delete" method="post">
+            <label for="secretKey">Enter secret key:</label>
+            <input type="text" id="secretKey" name="secretKey">
+            <div>
+                <button>Delete</button>
+            </div>
+        </form>
+        <a href="/movies/<%= id %>"><button>Go Back</button></a>
+    </div>
+</body>

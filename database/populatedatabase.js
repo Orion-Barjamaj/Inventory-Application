@@ -9,7 +9,7 @@ const SQL = `
         
     CREATE TABLE IF NOT EXISTS movies ( 
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        genreid INTEGER,
+        genreid TEXT,
         name VARCHAR ( 255 ),
         author VARCHAR ( 255 ),
         description TEXT,        
@@ -20,7 +20,7 @@ const SQL = `
 async function main() {
     console.log("seeding...");
     const client = new Client({
-      connectionString: "postgresql://InventoryDB_owner:CSr4jo2zIuYk@ep-lucky-lab-a2o5luyd.eu-central-1.aws.neon.tech/moviesdb?sslmode=require",
+      connectionString: 'postgresql://InventoryDB_owner:CSr4jo2zIuYk@ep-lucky-lab-a2o5luyd-pooler.eu-central-1.aws.neon.tech/moviesdb?sslmode=require',
     });
     await client.connect();
     await client.query(SQL);

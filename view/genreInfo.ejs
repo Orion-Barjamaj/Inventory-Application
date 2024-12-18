@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= genre.name %></title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/movies.css">
+    <link rel="stylesheet" href="/genres.css">
+</head>
+<body>
+    <%- include("navbar") %>
+    <div class="container">
+        <div class="movieInfoContainer">
+            <h1><%= genre.genrename %></h1>
+            <div class="line"></div>
+            <p><%= genre.description %></p>
+            <div>
+                <h2>Movies with this genre:</h2>
+                <div class="genreMovieContaienr">
+                    <% movies.map(movie => { %>
+                        <div class="movieCon">
+                            <div class="movieTitle"><%= movie.name %></div>
+                            <a href="/movies/<%= movie.id %>">View</a>
+                        </div>
+                    <% }) %>
+                </div>
+            </div> 
+        </div>
+        <div class="imageContainer">
+            <img>
+        </div>
+    </div>
+</body>
+</html>

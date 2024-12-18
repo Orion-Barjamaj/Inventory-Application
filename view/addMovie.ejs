@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/home.css">
     <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/movies.css">
-</head>
+</head> 
 <body>
     <%- include("navbar") %>
     <form action="/addMovie" method="post" class="movieFormContainer">
@@ -42,7 +42,7 @@
             <label for="genreid">Select Genre:</label>
             <select name="genre" id="genreSelect" required>
                     <% genres.map(genre => { %>
-                        <option value=<%= genre.id %> ><%= genre.genrename %></option>
+                        <option value=<%= genre.genrename %> ><%= genre.genrename %></option>
                     <% }) %>
             </select>
         </div>

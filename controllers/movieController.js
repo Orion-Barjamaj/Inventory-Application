@@ -7,8 +7,8 @@ module.exports = {
     },
     post: (req, res) => {
         console.log(req.body);
-        const { genreid, moviename, director, desc, rate, secretKey } = req.body;
-        query.insertMovie(genreid, moviename, director, desc, rate, secretKey);
+        const { genre, moviename, director, desc, rate, secretKey } = req.body;
+        query.insertMovie(genre, moviename, director, desc, rate, secretKey);
         res.redirect('/');
     },
     getMovies: async (req, res) => {
@@ -19,5 +19,13 @@ module.exports = {
         const getMovie = await query.selectMovie(req.params.id);
         const selectedMovie = getMovie[0];
         res.render("../view/movieInfo", {movies: selectedMovie, url: req.originalUrl});
+    },
+    delteMovie: async (req, res) => {
+        console.log(req.params);
+        res.render("../view/delete", {id: req.params.id});
+    },
+    postDelete: async (req, res) => {
+        query.deleteMovie(req.body.secretKey);
+        res.redirect('/');
     }
 }

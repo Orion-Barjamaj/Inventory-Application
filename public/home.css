@@ -12,6 +12,11 @@ body{
     background-color: #0f0e0f;
 }
 
+.movieHomeTitle{
+    color: white;
+    align-self: center;
+}
+
 .genreContainer{
     background-color: black;
     width: 100%;

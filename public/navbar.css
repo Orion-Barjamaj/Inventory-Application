@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .navbar{
     width: 100%;
     height: 100px;
@@ -48,6 +52,10 @@ button{
     transition: .02s;
 }
 
+.hamburger{
+    display: none;
+}
+
 .redline-home{
     left: 220px;
 }
@@ -66,4 +74,75 @@ button{
 
 .redline-genres{
     left: 1470px;
+}
+
+.line{
+    display: none;
+}
+
+.textConntaienr{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+}
+
+.sideMenuContainer{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) { /* Phone */
+    .navbar{
+        max-width: 100%;
+        gap: 0px;
+        height: 70px;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+    }
+
+    .redline, .redline-addMovie, .redline-home, .redline-createGenre, .redline-movies, .redline-genres, .addMovieBtn{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        height: 50px;
+        width: 50px;
+        z-index: 5;
+    }
+
+    .line{
+        display: block;
+        background-color: white;
+        height: 2px;
+        width: 100%;
+    }
+
+    .sideMenuContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+        background-color: #0b0b0b;
+        height: 100%;
+        width: 200px;
+        left: -200px;
+        position: absolute;
+        transition: .2s;
+        z-index: 200;
+    }
+
+    .sideMenuContainer.active{
+        left: 0px;
+    }
+
+    .closeBtn{
+        margin-top: auto;
+    }
 }

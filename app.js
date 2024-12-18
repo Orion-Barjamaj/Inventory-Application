@@ -29,6 +29,10 @@ async function getPgVersion() {
     } 
 }
 
+pool.connect()
+    .then(() => console.log('Connected to the database'))
+    .catch((err) => console.error('Database connection error:', err.stack));
+
 getPgVersion();
 
 // Rest of app

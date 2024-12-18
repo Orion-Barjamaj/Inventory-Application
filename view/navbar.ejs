@@ -12,6 +12,32 @@
         <% } else if (url === '/genres') { %> redline-genres 
         <% } %>">
     </div>
+
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+<div class="sideMenuContainer">
+    <a href="/addMovie"><button class="">ADD MOVIE</button></a>
+    <a href="/createGenre"><button class="">ADD GENRE</button></a>
+    <a href="/movies"><button class="">MOVIES</button></a>
+    <a href="/genres"><button class="">GENRES</button></a>
+    <button class="closeBtn">Close</button>
 </div>
 
-</nav>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const sideMenuContainer = document.querySelector('.sideMenuContainer');
+    const closeBtn = document.querySelector('.closeBtn');
+
+    hamburger.addEventListener('click', () => {
+        sideMenuContainer.classList.toggle('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sideMenuContainer.classList.remove('active'); 
+    });
+</script>
