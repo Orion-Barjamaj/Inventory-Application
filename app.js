@@ -16,6 +16,7 @@ const pool = new Pool({
     port: 5432,
     ssl: {
         require: true,
+        rejectUnauthorized: false,
     },
 });
 
