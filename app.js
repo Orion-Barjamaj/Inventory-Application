@@ -7,13 +7,9 @@ const port = process.env.PORT || 5432;
 // Connect to database
 
 const { Pool } = require('pg');
-const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
-    host: PGHOST,
-    database: PGDATABASE,
-    username: PGUSER,
-    password: PGPASSWORD,
-    port: 5432,
+    connectionString,
     ssl: {
         require: true,
         rejectUnauthorized: false,
