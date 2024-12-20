@@ -14,11 +14,6 @@ const pool = new Pool({
     username: PGUSER,
     password: PGPASSWORD,
     port: port,
-    ssl: {
-        require: true,
-        rejectUnauthorized: false,
-
-    },
 });
 
 
