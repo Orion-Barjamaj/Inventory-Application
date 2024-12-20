@@ -1,4 +1,5 @@
 const { Client } = require("pg");
+require('dotenv').config();
 
 const SQL = `
     CREATE TABLE IF NOT EXISTS genres (
@@ -20,7 +21,7 @@ const SQL = `
 async function main() {
     console.log("seeding...");
     const client = new Client({
-      connectionString: 'postgresql://InventoryDB_owner:CSr4jo2zIuYk@ep-lucky-lab-a2o5luyd-pooler.eu-central-1.aws.neon.tech/moviesdb?sslmode=require',
+      connectionString: process.env.DATABASE_URL,
     });
     await client.connect();
     await client.query(SQL);
