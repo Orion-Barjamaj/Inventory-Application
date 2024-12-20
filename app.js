@@ -14,6 +14,8 @@ const pool = new Pool({
     username: PGUSER,
     password: PGPASSWORD,
     port: port,
+    idleTimeoutMillis: 0,
+    connectionTimeoutMillis: 0,
 });
 
 
